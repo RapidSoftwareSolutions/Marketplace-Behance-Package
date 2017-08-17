@@ -1,0 +1,662 @@
+{
+	"name": "Behance",
+	"description": "Behance, part of the Adobe family, is the leading online platform to showcase & discover creative work. The creative world updates their work in one place to broadcast it widely and efficiently. Companies explore the work and access talent on a global scale.",
+	"connect": {
+		"username": "qa-project",
+		"password": "481bab2d-e8fe-4214-8714-bab8157356e4"
+	},
+	"dependencies": {
+
+	},
+	"blocks": [
+		{
+			"name": "getAllProjects",
+			"note": "",
+			"skip": false,
+			"params": [
+				{
+					"key": "clientId",
+					"value": "{{clientId}}"
+				},
+				{
+					"key": "searchQuery",
+					"value": "book"
+				},
+				{
+					"key": "sort",
+					"value": "featuredDate"
+				},
+				{
+					"key": "time",
+					"value": ""
+				},
+				{
+					"key": "field",
+					"value": "Branding"
+				},
+				{
+					"key": "country",
+					"value": "Usa"
+				},
+				{
+					"key": "state",
+					"value": ""
+				},
+				{
+					"key": "city",
+					"value": "new York"
+				},
+				{
+					"key": "page",
+					"value": 1
+				},
+				{
+					"key": "tags",
+					"value": []
+				},
+				{
+					"key": "colorHex",
+					"value": ""
+				},
+				{
+					"key": "colorRange",
+					"value": 0
+				},
+				{
+					"key": "license",
+					"value": ""
+				}
+			]
+		},
+		{
+			"name": "getProject",
+			"note": "",
+			"skip": false,
+			"params": [
+				{
+					"key": "apiKey",
+					"value": "{{apiKey}}"
+				},
+				{
+					"key": "projectId",
+					"value": "413699"
+				}
+			]
+		},
+		{
+			"name": "getProjectComments",
+			"note": "",
+			"skip": false,
+			"params": [
+				{
+					"key": "clientId",
+					"value": "{{clientId}}"
+				},
+				{
+					"key": "projectId",
+					"value": "413699"
+				},
+				{
+					"key": "page",
+					"value": 1
+				}
+			]
+		},
+		{
+			"name": "getAllCreativesToFollow",
+			"note": "",
+			"skip": false,
+			"params": [
+				{
+					"key": "clientId",
+					"value": "{{clientId}}"
+				},
+				{
+					"key": "page",
+					"value": 1
+				}
+			]
+		},
+		{
+			"name": "getAllCreativeFields",
+			"note": "",
+			"skip": false,
+			"params": [
+				{
+					"key": "clientId",
+					"value": "{{clientId}}"
+				}
+			]
+		},
+		{
+			"name": "getAllUsers",
+			"note": "",
+			"skip": false,
+			"params": [
+				{
+					"key": "clientId",
+					"value": "{{clientId}}"
+				},
+				{
+					"key": "searchQuery",
+					"value": ""
+				},
+				{
+					"key": "sort",
+					"value": "featuredDate"
+				},
+				{
+					"key": "field",
+					"value": "Branding"
+				},
+				{
+					"key": "country",
+					"value": "Usa"
+				},
+				{
+					"key": "state",
+					"value": ""
+				},
+				{
+					"key": "city",
+					"value": "new York"
+				},
+				{
+					"key": "page",
+					"value": 1
+				},
+				{
+					"key": "tags",
+					"value": []
+				}
+			]
+		},
+		{
+			"name": "getUserByName",
+			"note": "",
+			"skip": false,
+			"params": [
+				{
+					"key": "clientId",
+					"value": "{{clientId}}"
+				},
+				{
+					"key": "username",
+					"value": "{{username}}"
+				}
+			]
+		},
+		{
+			"name": "getUser",
+			"note": "",
+			"skip": false,
+			"params": [
+				{
+					"key": "clientId",
+					"value": "{{clientId}}"
+				},
+				{
+					"key": "userId",
+					"value": "{{userId}}"
+				}
+			]
+		},
+		{
+			"name": "getUserProjects",
+			"note": "",
+			"skip": false,
+			"params": [
+				{
+					"key": "clientId",
+					"value": "{{clientId}}"
+				},
+				{
+					"key": "userId",
+					"value": "{{userId}}"
+				},
+				{
+					"key": "time",
+					"value": ""
+				},
+				{
+					"key": "sort",
+					"value": "featuredDate"
+				},
+				{
+					"key": "page",
+					"value": 2
+				}
+			]
+		},
+		{
+			"name": "getUserProjectsByUsername",
+			"note": "",
+			"skip": false,
+			"params": [
+				{
+					"key": "clientId",
+					"value": "{{clientId}}"
+				},
+				{
+					"key": "username",
+					"value": "{{username}}"
+				},
+				{
+					"key": "time",
+					"value": ""
+				},
+				{
+					"key": "sort",
+					"value": "featuredDate"
+				},
+				{
+					"key": "page",
+					"value": 2
+				}
+			]
+		},
+		{
+			"name": "getUserWips",
+			"note": "",
+			"skip": false,
+			"params": [
+				{
+					"key": "clientId",
+					"value": "{{clientId}}"
+				},
+				{
+					"key": "userId",
+					"value": "{{userId}}"
+				},
+				{
+					"key": "time",
+					"value": ""
+				},
+				{
+					"key": "sort",
+					"value": "featuredDate"
+				},
+				{
+					"key": "page",
+					"value": 2
+				}
+			]
+		},
+		{
+			"name": "getUserWipsByUsername",
+			"note": "",
+			"skip": false,
+			"params": [
+				{
+					"key": "clientId",
+					"value": "{{clientId}}"
+				},
+				{
+					"key": "username",
+					"value": "{{username}}"
+				},
+				{
+					"key": "time",
+					"value": ""
+				},
+				{
+					"key": "sort",
+					"value": "featuredDate"
+				},
+				{
+					"key": "page",
+					"value": 2
+				}
+			]
+		},
+		{
+			"name": "getUserAppreciations",
+			"note": "",
+			"skip": false,
+			"params": [
+				{
+					"key": "clientId",
+					"value": "{{clientId}}"
+				},
+				{
+					"key": "userId",
+					"value": "{{userId}}"
+				},
+				{
+					"key": "page",
+					"value": 2
+				}
+			]
+		},
+		{
+			"name": "getUserAppreciationsByUsername",
+			"note": "",
+			"skip": false,
+			"params": [
+				{
+					"key": "clientId",
+					"value": "{{clientId}}"
+				},
+				{
+					"key": "username",
+					"value": "{{username}}"
+				},
+				{
+					"key": "page",
+					"value": 2
+				}
+			]
+		},
+		{
+			"name": "getUserCollections",
+			"note": "",
+			"skip": false,
+			"params": [
+				{
+					"key": "clientId",
+					"value": "{{clientId}}"
+				},
+				{
+					"key": "userId",
+					"value": "{{userId}}"
+				},
+				{
+					"key": "page",
+					"value": 2
+				},
+				{
+					"key": "sort",
+					"value": "featuredDate"
+				},
+				{
+					"key": "time",
+					"value": ""
+				}
+			]
+		},
+		{
+			"name": "getUserCollectionsByUsername",
+			"note": "",
+			"skip": false,
+			"params": [
+				{
+					"key": "clientId",
+					"value": "{{clientId}}"
+				},
+				{
+					"key": "username",
+					"value": "{{username}}"
+				},
+				{
+					"key": "page",
+					"value": 2
+				},
+				{
+					"key": "sort",
+					"value": "featuredDate"
+				},
+				{
+					"key": "time",
+					"value": ""
+				}
+			]
+		},
+		{
+			"name": "getUserStats",
+			"note": "",
+			"skip": false,
+			"params": [
+				{
+					"key": "clientId",
+					"value": "{{clientId}}"
+				},
+				{
+					"key": "userId",
+					"value": "{{userId}}"
+				}
+			]
+		},
+		{
+			"name": "getUserStatsByUsername",
+			"note": "",
+			"skip": false,
+			"params": [
+				{
+					"key": "clientId",
+					"value": "{{clientId}}"
+				},
+				{
+					"key": "username",
+					"value": "{{username}}"
+				}
+			]
+		},
+		{
+			"name": "getUserFollowers",
+			"note": "",
+			"skip": false,
+			"params": [
+				{
+					"key": "clientId",
+					"value": "{{clientId}}"
+				},
+				{
+					"key": "userId",
+					"value": "{{userId}}"
+				},
+				{
+					"key": "page",
+					"value": 1
+				},
+				{
+					"key": "sort",
+					"value": "featuredDate"
+				},
+				{
+					"key": "sortOrder",
+					"value": "asc"
+				},
+				{
+					"key": "perPage",
+					"value": 5
+				}
+			]
+		},
+		{
+			"name": "getUserFollowersByUsername",
+			"note": "",
+			"skip": false,
+			"params": [
+				{
+					"key": "clientId",
+					"value": "{{clientId}}"
+				},
+				{
+					"key": "username",
+					"value": "{{username}}"
+				},
+				{
+					"key": "page",
+					"value": 1
+				},
+				{
+					"key": "sort",
+					"value": "featuredDate"
+				},
+				{
+					"key": "sortOrder",
+					"value": "asc"
+				},
+				{
+					"key": "perPage",
+					"value": 5
+				}
+			]
+		},
+		{
+			"name": "getUserFollowing",
+			"note": "",
+			"skip": false,
+			"params": [
+				{
+					"key": "clientId",
+					"value": "{{clientId}}"
+				},
+				{
+					"key": "userId",
+					"value": "{{userId}}"
+				},
+				{
+					"key": "page",
+					"value": 1
+				},
+				{
+					"key": "sort",
+					"value": "featuredDate"
+				},
+				{
+					"key": "sortOrder",
+					"value": "asc"
+				},
+				{
+					"key": "perPage",
+					"value": 5
+				}
+			]
+		},
+		{
+			"name": "getUserFollowingByUsername",
+			"note": "",
+			"skip": false,
+			"params": [
+				{
+					"key": "clientId",
+					"value": "{{clientId}}"
+				},
+				{
+					"key": "username",
+					"value": "{{username}}"
+				},
+				{
+					"key": "page",
+					"value": 1
+				},
+				{
+					"key": "sort",
+					"value": "featuredDate"
+				},
+				{
+					"key": "sortOrder",
+					"value": "asc"
+				},
+				{
+					"key": "perPage",
+					"value": 5
+				}
+			]
+		},
+		{
+			"name": "getUserWorkExperience",
+			"note": "",
+			"skip": false,
+			"params": [
+				{
+					"key": "clientId",
+					"value": "{{clientId}}"
+				},
+				{
+					"key": "userId",
+					"value": "{{userId}}"
+				}
+			]
+		},
+		{
+			"name": "getUserWorkExperienceByUsername",
+			"note": "",
+			"skip": false,
+			"params": [
+				{
+					"key": "clientId",
+					"value": "{{clientId}}"
+				},
+				{
+					"key": "username",
+					"value": "{{username}}"
+				}
+			]
+		},
+		{
+			"name": "getAllCollections",
+			"note": "",
+			"skip": false,
+			"params": [
+				{
+					"key": "apiKey",
+					"value": "{{apiKey}}"
+				},
+				{
+					"key": "searchQuery",
+					"value": ""
+				},
+				{
+					"key": "sort",
+					"value": "featuredDate"
+				},
+				{
+					"key": "time",
+					"value": ""
+				},
+				{
+					"key": "page",
+					"value": 1
+				}
+			]
+		},
+		{
+			"name": "getCollection",
+			"note": "",
+			"skip": false,
+			"params": [
+				{
+					"key": "apiKey",
+					"value": "{{apiKey}}"
+				},
+				{
+					"key": "collectionId",
+					"value": ""
+				}
+			]
+		},
+		{
+			"name": "getProjectFromCollection",
+			"note": "",
+			"skip": false,
+			"params": [
+				{
+					"key": "clientId",
+					"value": "{{clientId}}"
+				},
+				{
+					"key": "collectionId",
+					"value": ""
+				},
+				{
+					"key": "page",
+					"value": 1
+				},
+				{
+					"key": "time",
+					"value": ""
+				},
+				{
+					"key": "sort",
+					"value": "featuredDate"
+				},
+				{
+					"key": "perPage",
+					"value": 5
+				}
+			]
+		}
+	]
+}

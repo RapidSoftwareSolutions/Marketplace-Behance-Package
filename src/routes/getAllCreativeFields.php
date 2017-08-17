@@ -41,8 +41,7 @@ $app->post('/api/Behance/getAllCreativeFields', function ($request, $response) {
         }
     }
 
-    $url = $url.$queryParam['projectId'];
-    unset($queryParam['projectId']);
+
 
     $client = $this->httpClient;
 
