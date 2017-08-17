@@ -203,12 +203,6 @@
 					"type":"credentials",
 					"info":"API client id.",
 					"required":true
-				},
-				{
-					"name":"page",
-					"type":"Number",
-					"info":"The page number of the results, always starting with 1.",
-					"required":false
 				}
 			],
 			"callbacks":[

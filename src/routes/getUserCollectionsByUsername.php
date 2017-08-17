@@ -5,7 +5,7 @@ $app->post('/api/Behance/getUserCollectionsByUsername', function ($request, $res
 
 
     $option = array(
-        "apiKey" => "api_key",
+        "clientId" => "api_key",
         "username" => "username",
         "page" => "page",
         "time" => "time",
@@ -19,7 +19,7 @@ $app->post('/api/Behance/getUserCollectionsByUsername', function ($request, $res
 
 
     $checkRequest = $this->validation;
-    $validateRes = $checkRequest->validate($request, ['apiKey','username']);
+    $validateRes = $checkRequest->validate($request, ['clientId','username']);
     if(!empty($validateRes) && isset($validateRes['callback']) && $validateRes['callback']=='error') {
         return $response->withHeader('Content-type', 'application/json')->withStatus(200)->withJson($validateRes);
     } else {

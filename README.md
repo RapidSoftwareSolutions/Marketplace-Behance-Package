@@ -60,7 +60,6 @@ Provides a list of creatives you might be interested in following.
 | Field   | Type       | Description
 |---------|------------|----------
 | clientId| credentials| API client id.
-| page    | Number     | The page number of the results, always starting with 1.
 
 ## Behance.getAllCreativeFields
 Retrieves all Creative Fields in two groups, all fields (in 'fields') and popular ones (in 'popular').
