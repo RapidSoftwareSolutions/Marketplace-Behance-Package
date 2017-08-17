@@ -1,0 +1,1324 @@
+{
+	"package":"Behance",
+	"tagline":"Behance API",
+	"description":"Behance, part of the Adobe family, is the leading online platform to showcase & discover creative work. The creative world updates their work in one place to broadcast it widely and efficiently. Companies explore the work and access talent on a global scale.",
+	"image":"https://logo.clearbit.com/www.behance.net",
+	"repo":"",
+	"keywords":[
+		"API",
+		"Creative work",
+		"Art",
+		"Architecture",
+		"Talent",
+		"Photo"
+	],
+	"accounts":{
+		"domain":"behance.net",
+		"credentials":[
+			"apiKey",
+			"clientId"
+		]
+	},
+	"blocks":[
+		{
+			"name":"getAllProjects",
+			"description":"The getAllProjects endpoints allow you to browse all projects.",
+			"args":[
+				{
+					"name":"clientId",
+					"type":"credentials",
+					"info":"API client id.",
+					"required":true
+				},
+				{
+					"name":"searchQuery",
+					"type":"String",
+					"info":"Free text query string.",
+					"required":false
+				},
+				{
+					"name":"sort",
+					"type":"Select",
+					"options":[
+						"featuredDate",
+						"appreciations",
+						"views",
+						"comments",
+						"publishedDate"
+					],
+					"info":"The order the results are returned in.",
+					"required":false
+				},
+				{
+					"name":"time",
+					"type":"Select",
+					"options":[
+						"all",
+						"today",
+						"week",
+						"month"
+					],
+					"info":"Limits the search by time.",
+					"required":false
+				},
+				{
+					"name":"field",
+					"type":"String",
+					"info":"Limits the search by creative field.Field name from the list of defined creative fields.",
+					"required":false
+				},
+				{
+					"name":"country",
+					"type":"String",
+					"info":"Limits the search by a 2-letter FIPS country code.",
+					"required":false
+				},
+				{
+					"name":"state",
+					"type":"String",
+					"info":"Limits the search by state or province name.",
+					"required":false
+				},
+				{
+					"name":"city",
+					"type":"String",
+					"info":"Limits the search by city name.",
+					"required":false
+				},
+				{
+					"name":"page",
+					"type":"Number",
+					"info":"The page number of the results, always starting with 1.",
+					"required":false
+				},
+				{
+					"name":"tags",
+					"type":"List",
+					"info":"Limits the search by tags. ",
+					"structure":{
+						"name":"singleTag",
+						"type":"String",
+						"info":"Single tag."
+					},
+					"required":false
+				},
+				{
+					"name":"colorHex",
+					"type":"String",
+					"info":"Limit results to an RGB hex value (without #).",
+					"required":false
+				},
+				{
+					"name":"colorRange",
+					"type":"Number",
+					"info":"How closely to match the requested colorHex, in color shades (default:20) [0-255]",
+					"required":false
+				},
+				{
+					"name":"license",
+					"type":"String",
+					"info":"Filter by creative license. Acronyms found here: http://creativecommons.org/licenses/",
+					"required":false
+				}
+			],
+			"callbacks":[
+				{
+					"name":"error",
+					"info":"Error"
+				},
+				{
+					"name":"success",
+					"info":"Success"
+				}
+			]
+		},
+		{
+			"name":"getProject",
+			"description":"Get the information and content of a project.",
+			"args":[
+				{
+					"name":"apiKey",
+					"type":"credentials",
+					"info":"API key.",
+					"required":true
+				},
+				{
+					"name":"projectId",
+					"type":"String",
+					"info":"Project id on which we will receive data.",
+					"required":true
+				}
+			],
+			"callbacks":[
+				{
+					"name":"error",
+					"info":"Error"
+				},
+				{
+					"name":"success",
+					"info":"Success"
+				}
+			]
+		},
+		{
+			"name":"getProjectComments",
+			"description":"Get the comments for a project.",
+			"args":[
+				{
+					"name":"clientId",
+					"type":"credentials",
+					"info":"API client id.",
+					"required":true
+				},
+				{
+					"name":"projectId",
+					"type":"String",
+					"info":"Project id on which we will receive data.",
+					"required":true
+				},
+				{
+					"name":"page",
+					"type":"Number",
+					"info":"The page number of the results, always starting with 1.",
+					"required":false
+				}
+			],
+			"callbacks":[
+				{
+					"name":"error",
+					"info":"Error"
+				},
+				{
+					"name":"success",
+					"info":"Success"
+				}
+			]
+		},
+		{
+			"name":"getAllCreativesToFollow",
+			"description":"Provides a list of creatives you might be interested in following.",
+			"args":[
+				{
+					"name":"clientId",
+					"type":"credentials",
+					"info":"API client id.",
+					"required":true
+				},
+				{
+					"name":"page",
+					"type":"Number",
+					"info":"The page number of the results, always starting with 1.",
+					"required":false
+				}
+			],
+			"callbacks":[
+				{
+					"name":"error",
+					"info":"Error"
+				},
+				{
+					"name":"success",
+					"info":"Success"
+				}
+			]
+		},
+		{
+			"name":"getAllCreativeFields",
+			"description":"Retrieves all Creative Fields in two groups, all fields (in 'fields') and popular ones (in 'popular')",
+			"args":[
+				{
+					"name":"clientId",
+					"type":"credentials",
+					"info":"API client id.",
+					"required":true
+				}
+			],
+			"callbacks":[
+				{
+					"name":"error",
+					"info":"Error"
+				},
+				{
+					"name":"success",
+					"info":"Success"
+				}
+			]
+		},
+		{
+			"name":"getAllUsers",
+			"description":"The getAllUsers endpoints allow you to browse all users.",
+			"args":[
+				{
+					"name":"clientId",
+					"type":"credentials",
+					"info":"API client id.",
+					"required":true
+				},
+				{
+					"name":"searchQuery",
+					"type":"String",
+					"info":"Free text query string.",
+					"required":false
+				},
+				{
+					"name":"sort",
+					"type":"Select",
+					"options":[
+						"featuredDate",
+						"appreciations",
+						"views",
+						"comments",
+						"publishedDate"
+					],
+					"info":"The order the results are returned in.",
+					"required":false
+				},
+				{
+					"name":"field",
+					"type":"String",
+					"info":"Limits the search by creative field.Field name from the list of defined creative fields.",
+					"required":false
+				},
+				{
+					"name":"country",
+					"type":"String",
+					"info":"Limits the search by a 2-letter FIPS country code.",
+					"required":false
+				},
+				{
+					"name":"state",
+					"type":"String",
+					"info":"Limits the search by state or province name.",
+					"required":false
+				},
+				{
+					"name":"city",
+					"type":"String",
+					"info":"Limits the search by city name.",
+					"required":false
+				},
+				{
+					"name":"page",
+					"type":"Number",
+					"info":"The page number of the results, always starting with 1.",
+					"required":false
+				},
+				{
+					"name":"tags",
+					"type":"List",
+					"info":"Limits the search by tags. ",
+					"structure":{
+						"name":"singleTag",
+						"type":"String",
+						"info":"Single tag."
+					},
+					"required":false
+				}
+			],
+			"callbacks":[
+				{
+					"name":"error",
+					"info":"Error"
+				},
+				{
+					"name":"success",
+					"info":"Success"
+				}
+			]
+		},
+		{
+			"name":"getUserByName",
+			"description":"Get basic information about a user by username.",
+			"args":[
+				{
+					"name":"clientId",
+					"type":"credentials",
+					"info":"API client id.",
+					"required":true
+				},
+				{
+					"name":"username",
+					"type":"String",
+					"info":"User name on which we will receive data.",
+					"required":true
+				}
+			],
+			"callbacks":[
+				{
+					"name":"error",
+					"info":"Error"
+				},
+				{
+					"name":"success",
+					"info":"Success"
+				}
+			]
+		},
+		{
+			"name":"getUser",
+			"description":"Get basic information about a user by userId.",
+			"args":[
+				{
+					"name":"clientId",
+					"type":"credentials",
+					"info":"API client id.",
+					"required":true
+				},
+				{
+					"name":"userId",
+					"type":"String",
+					"info":"User id on which we will receive data.",
+					"required":true
+				}
+			],
+			"callbacks":[
+				{
+					"name":"error",
+					"info":"Error"
+				},
+				{
+					"name":"success",
+					"info":"Success"
+				}
+			]
+		},
+		{
+			"name":"getUserProjects",
+			"description":"Get the projects published by userId.",
+			"args":[
+				{
+					"name":"clientId",
+					"type":"credentials",
+					"info":"API client id.",
+					"required":true
+				},
+				{
+					"name":"userId",
+					"type":"String",
+					"info":"User id on which we will receive data.",
+					"required":true
+				},
+				{
+					"name":"time",
+					"type":"Select",
+					"options":[
+						"all",
+						"today",
+						"week",
+						"month"
+					],
+					"info":"Limits the search by time.",
+					"required":false
+				},
+				{
+					"name":"sort",
+					"type":"Select",
+					"options":[
+						"featuredDate",
+						"appreciations",
+						"views",
+						"comments",
+						"publishedDate"
+					],
+					"info":"The order the results are returned in.",
+					"required":false
+				},
+				{
+					"name":"page",
+					"type":"Number",
+					"info":"The page number of the results, always starting with 1.",
+					"required":false
+				}
+			],
+			"callbacks":[
+				{
+					"name":"error",
+					"info":"Error"
+				},
+				{
+					"name":"success",
+					"info":"Success"
+				}
+			]
+		},
+		{
+			"name":"getUserProjectsByUsername",
+			"description":"Get the projects published by username.",
+			"args":[
+				{
+					"name":"clientId",
+					"type":"credentials",
+					"info":"API client id.",
+					"required":true
+				},
+				{
+					"name":"username",
+					"type":"String",
+					"info":"User name on which we will receive data.",
+					"required":true
+				},
+				{
+					"name":"time",
+					"type":"Select",
+					"options":[
+						"all",
+						"today",
+						"week",
+						"month"
+					],
+					"info":"Limits the search by time.",
+					"required":false
+				},
+				{
+					"name":"sort",
+					"type":"Select",
+					"options":[
+						"featuredDate",
+						"appreciations",
+						"views",
+						"comments",
+						"publishedDate"
+					],
+					"info":"The order the results are returned in.",
+					"required":false
+				},
+				{
+					"name":"page",
+					"type":"Number",
+					"info":"The page number of the results, always starting with 1.",
+					"required":false
+				}
+			],
+			"callbacks":[
+				{
+					"name":"error",
+					"info":"Error"
+				},
+				{
+					"name":"success",
+					"info":"Success"
+				}
+			]
+		},
+		{
+			"name":"getUserWips",
+			"description":"Get the works-in-progress published by userId.",
+			"args":[
+				{
+					"name":"clientId",
+					"type":"credentials",
+					"info":"API client id.",
+					"required":true
+				},
+				{
+					"name":"userId",
+					"type":"String",
+					"info":"User id on which we will receive data.",
+					"required":true
+				},
+				{
+					"name":"time",
+					"type":"Select",
+					"options":[
+						"all",
+						"today",
+						"week",
+						"month"
+					],
+					"info":"Limits the search by time.",
+					"required":false
+				},
+				{
+					"name":"sort",
+					"type":"Select",
+					"options":[
+						"featuredDate",
+						"appreciations",
+						"views",
+						"comments",
+						"publishedDate"
+					],
+					"info":"The order the results are returned in.",
+					"required":false
+				},
+				{
+					"name":"page",
+					"type":"Number",
+					"info":"The page number of the results, always starting with 1.",
+					"required":false
+				}
+			],
+			"callbacks":[
+				{
+					"name":"error",
+					"info":"Error"
+				},
+				{
+					"name":"success",
+					"info":"Success"
+				}
+			]
+		},
+		{
+			"name":"getUserWipsByUsername",
+			"description":"Get the works-in-progress published by a user by username.",
+			"args":[
+				{
+					"name":"clientId",
+					"type":"credentials",
+					"info":"API client id.",
+					"required":true
+				},
+				{
+					"name":"username",
+					"type":"String",
+					"info":"Username on which we will receive data.",
+					"required":true
+				},
+				{
+					"name":"time",
+					"type":"Select",
+					"options":[
+						"all",
+						"today",
+						"week",
+						"month"
+					],
+					"info":"Limits the search by time.",
+					"required":false
+				},
+				{
+					"name":"sort",
+					"type":"Select",
+					"options":[
+						"featuredDate",
+						"appreciations",
+						"views",
+						"comments",
+						"publishedDate"
+					],
+					"info":"The order the results are returned in.",
+					"required":false
+				},
+				{
+					"name":"page",
+					"type":"Number",
+					"info":"The page number of the results, always starting with 1.",
+					"required":false
+				}
+			],
+			"callbacks":[
+				{
+					"name":"error",
+					"info":"Error"
+				},
+				{
+					"name":"success",
+					"info":"Success"
+				}
+			]
+		},
+		{
+			"name":"getUserAppreciations",
+			"description":"Get a list of user's recently appreciated projects by userId.",
+			"args":[
+				{
+					"name":"clientId",
+					"type":"credentials",
+					"info":"API client id.",
+					"required":true
+				},
+				{
+					"name":"userId",
+					"type":"String",
+					"info":"UserId on which we will receive data.",
+					"required":true
+				},
+				{
+					"name":"page",
+					"type":"Number",
+					"info":"The page number of the results, always starting with 1.",
+					"required":false
+				}
+			],
+			"callbacks":[
+				{
+					"name":"error",
+					"info":"Error"
+				},
+				{
+					"name":"success",
+					"info":"Success"
+				}
+			]
+		},
+		{
+			"name":"getUserAppreciationsByUsername",
+			"description":"Get a list of user's recently appreciated projects by username.",
+			"args":[
+				{
+					"name":"clientId",
+					"type":"credentials",
+					"info":"API client id.",
+					"required":true
+				},
+				{
+					"name":"username",
+					"type":"String",
+					"info":"Username on which we will receive data.",
+					"required":true
+				},
+				{
+					"name":"page",
+					"type":"Number",
+					"info":"The page number of the results, always starting with 1.",
+					"required":false
+				}
+			],
+			"callbacks":[
+				{
+					"name":"error",
+					"info":"Error"
+				},
+				{
+					"name":"success",
+					"info":"Success"
+				}
+			]
+		},
+		{
+			"name":"getUserCollections",
+			"description":"Get a list of a user's collections by userId.",
+			"args":[
+				{
+					"name":"clientId",
+					"type":"credentials",
+					"info":"API client id.",
+					"required":true
+				},
+				{
+					"name":"userId",
+					"type":"String",
+					"info":"UserId on which we will receive data.",
+					"required":true
+				},
+				{
+					"name":"page",
+					"type":"Number",
+					"info":"The page number of the results, always starting with 1.",
+					"required":false
+				},
+				{
+					"name":"sort",
+					"type":"Select",
+					"options":[
+						"featuredDate",
+						"appreciations",
+						"views",
+						"comments",
+						"publishedDate"
+					],
+					"info":"The order the results are returned in.",
+					"required":false
+				},
+				{
+					"name":"time",
+					"type":"Select",
+					"options":[
+						"all",
+						"today",
+						"week",
+						"month"
+					],
+					"info":"Limits the search by time.",
+					"required":false
+				}
+			],
+			"callbacks":[
+				{
+					"name":"error",
+					"info":"Error"
+				},
+				{
+					"name":"success",
+					"info":"Success"
+				}
+			]
+		},
+		{
+			"name":"getUserCollectionsByUsername",
+			"description":"Get a list of a user's collections by username.",
+			"args":[
+				{
+					"name":"clientId",
+					"type":"credentials",
+					"info":"API client id.",
+					"required":true
+				},
+				{
+					"name":"username",
+					"type":"String",
+					"info":"Username on which we will receive data.",
+					"required":true
+				},
+				{
+					"name":"page",
+					"type":"Number",
+					"info":"The page number of the results, always starting with 1.",
+					"required":false
+				},
+				{
+					"name":"sort",
+					"type":"Select",
+					"options":[
+						"featuredDate",
+						"appreciations",
+						"views",
+						"comments",
+						"publishedDate"
+					],
+					"info":"The order the results are returned in.",
+					"required":false
+				},
+				{
+					"name":"time",
+					"type":"Select",
+					"options":[
+						"all",
+						"today",
+						"week",
+						"month"
+					],
+					"info":"Limits the search by time.",
+					"required":false
+				}
+			],
+			"callbacks":[
+				{
+					"name":"error",
+					"info":"Error"
+				},
+				{
+					"name":"success",
+					"info":"Success"
+				}
+			]
+		},
+		{
+			"name":"getUserStats",
+			"description":"Get statistics (all-time and today) for a specific user. Includes number of project views, appreciations, comments, and profile views by userId.",
+			"args":[
+				{
+					"name":"clientId",
+					"type":"credentials",
+					"info":"API client id.",
+					"required":true
+				},
+				{
+					"name":"userId",
+					"type":"String",
+					"info":"UserId on which we will receive data.",
+					"required":true
+				}
+			],
+			"callbacks":[
+				{
+					"name":"error",
+					"info":"Error"
+				},
+				{
+					"name":"success",
+					"info":"Success"
+				}
+			]
+		},
+		{
+			"name":"getUserStatsByUsername",
+			"description":"Get statistics (all-time and today) for a specific user. Includes number of project views, appreciations, comments, and profile views by userName.",
+			"args":[
+				{
+					"name":"clientId",
+					"type":"credentials",
+					"info":"API client id.",
+					"required":true
+				},
+				{
+					"name":"username",
+					"type":"String",
+					"info":"Username on which we will receive data.",
+					"required":true
+				}
+			],
+			"callbacks":[
+				{
+					"name":"error",
+					"info":"Error"
+				},
+				{
+					"name":"success",
+					"info":"Success"
+				}
+			]
+		},
+		{
+			"name":"getUserFollowers",
+			"description":"Get a list of creatives who follow the user.",
+			"args":[
+				{
+					"name":"clientId",
+					"type":"credentials",
+					"info":"API client id.",
+					"required":true
+				},
+				{
+					"name":"userId",
+					"type":"String",
+					"info":"UserId on which we will receive data.",
+					"required":true
+				},
+				{
+					"name":"page",
+					"type":"Number",
+					"info":"The page number of the results, always starting with 1.",
+					"required":false
+				},
+				{
+					"name":"sort",
+					"type":"Select",
+					"options":[
+						"featuredDate",
+						"appreciations",
+						"views",
+						"comments",
+						"publishedDate"
+					],
+					"info":"The order the results are returned in.",
+					"required":false
+				},
+				{
+					"name":"sortOrder",
+					"type":"Select",
+					"options":[
+						"asc",
+						"desc"
+					],
+					"info":"The direction in which the results are returned.",
+					"required":false
+				},
+				{
+					"name":"perPage",
+					"type":"Number",
+					"info":"The number of results per page.(Max:20)",
+					"required":false
+				}
+			],
+			"callbacks":[
+				{
+					"name":"error",
+					"info":"Error"
+				},
+				{
+					"name":"success",
+					"info":"Success"
+				}
+			]
+		},
+		{
+			"name":"getUserFollowersByUsername",
+			"description":"Get a list of creatives who follow the user by username.",
+			"args":[
+				{
+					"name":"clientId",
+					"type":"credentials",
+					"info":"API client id.",
+					"required":true
+				},
+				{
+					"name":"username",
+					"type":"String",
+					"info":"Username on which we will receive data.",
+					"required":true
+				},
+				{
+					"name":"page",
+					"type":"Number",
+					"info":"The page number of the results, always starting with 1.",
+					"required":false
+				},
+				{
+					"name":"sort",
+					"type":"Select",
+					"options":[
+						"featuredDate",
+						"appreciations",
+						"views",
+						"comments",
+						"publishedDate"
+					],
+					"info":"The order the results are returned in.",
+					"required":false
+				},
+				{
+					"name":"sortOrder",
+					"type":"Select",
+					"options":[
+						"asc",
+						"desc"
+					],
+					"info":"The direction in which the results are returned.",
+					"required":false
+				},
+				{
+					"name":"perPage",
+					"type":"Number",
+					"info":"The number of results per page.(Max:20)",
+					"required":false
+				}
+			],
+			"callbacks":[
+				{
+					"name":"error",
+					"info":"Error"
+				},
+				{
+					"name":"success",
+					"info":"Success"
+				}
+			]
+		},
+		{
+			"name":"getUserFollowing",
+			"description":"Get a list of creatives followed by the user by userId.",
+			"args":[
+				{
+					"name":"clientId",
+					"type":"credentials",
+					"info":"API client id.",
+					"required":true
+				},
+				{
+					"name":"userId",
+					"type":"String",
+					"info":"UserId on which we will receive data.",
+					"required":true
+				},
+				{
+					"name":"page",
+					"type":"Number",
+					"info":"The page number of the results, always starting with 1.",
+					"required":false
+				},
+				{
+					"name":"sort",
+					"type":"Select",
+					"options":[
+						"featuredDate",
+						"appreciations",
+						"views",
+						"comments",
+						"publishedDate"
+					],
+					"info":"The order the results are returned in.",
+					"required":false
+				},
+				{
+					"name":"sortOrder",
+					"type":"Select",
+					"options":[
+						"asc",
+						"desc"
+					],
+					"info":"The direction in which the results are returned.",
+					"required":false
+				},
+				{
+					"name":"perPage",
+					"type":"Number",
+					"info":"The number of results per page.(Max:20)",
+					"required":false
+				}
+			],
+			"callbacks":[
+				{
+					"name":"error",
+					"info":"Error"
+				},
+				{
+					"name":"success",
+					"info":"Success"
+				}
+			]
+		},
+		{
+			"name":"getUserFollowingByUsername",
+			"description":"Get a list of creatives followed by the user by username.",
+			"args":[
+				{
+					"name":"clientId",
+					"type":"credentials",
+					"info":"API client id.",
+					"required":true
+				},
+				{
+					"name":"username",
+					"type":"String",
+					"info":"Username on which we will receive data.",
+					"required":true
+				},
+				{
+					"name":"page",
+					"type":"Number",
+					"info":"The page number of the results, always starting with 1.",
+					"required":false
+				},
+				{
+					"name":"sort",
+					"type":"Select",
+					"options":[
+						"featuredDate",
+						"appreciations",
+						"views",
+						"comments",
+						"publishedDate"
+					],
+					"info":"The order the results are returned in.",
+					"required":false
+				},
+				{
+					"name":"sortOrder",
+					"type":"Select",
+					"options":[
+						"asc",
+						"desc"
+					],
+					"info":"The direction in which the results are returned.",
+					"required":false
+				},
+				{
+					"name":"perPage",
+					"type":"Number",
+					"info":"The number of results per page.(Max:20)",
+					"required":false
+				}
+			],
+			"callbacks":[
+				{
+					"name":"error",
+					"info":"Error"
+				},
+				{
+					"name":"success",
+					"info":"Success"
+				}
+			]
+		},
+		{
+			"name":"getUserWorkExperience",
+			"description":"A list of the user's professional experience by userId.",
+			"args":[
+				{
+					"name":"clientId",
+					"type":"credentials",
+					"info":"API client id.",
+					"required":true
+				},
+				{
+					"name":"userId",
+					"type":"String",
+					"info":"UserId on which we will receive data.",
+					"required":true
+				}
+			],
+			"callbacks":[
+				{
+					"name":"error",
+					"info":"Error"
+				},
+				{
+					"name":"success",
+					"info":"Success"
+				}
+			]
+		},
+		{
+			"name":"getUserWorkExperienceByUsername",
+			"description":"A list of the user's professional experience by Username.",
+			"args":[
+				{
+					"name":"clientId",
+					"type":"credentials",
+					"info":"API client id.",
+					"required":true
+				},
+				{
+					"name":"username",
+					"type":"String",
+					"info":"UserId on which we will receive data.",
+					"required":true
+				}
+			],
+			"callbacks":[
+				{
+					"name":"error",
+					"info":"Error"
+				},
+				{
+					"name":"success",
+					"info":"Success"
+				}
+			]
+		},
+		{
+			"name":"getAllCollections",
+			"description":"The getAllCollections endpoints allow you to browse all collections.",
+			"args":[
+				{
+					"name":"apiKey",
+					"type":"credentials",
+					"info":"API key.",
+					"required":true
+				},
+				{
+					"name":"searchQuery",
+					"type":"String",
+					"info":"Free text query string.",
+					"required":false
+				},
+				{
+					"name":"sort",
+					"type":"Select",
+					"options":[
+						"featuredDate",
+						"appreciations",
+						"views",
+						"comments",
+						"publishedDate"
+					],
+					"info":"The order the results are returned in.",
+					"required":false
+				},
+				{
+					"name":"time",
+					"type":"Select",
+					"options":[
+						"all",
+						"today",
+						"week",
+						"month"
+					],
+					"info":"Limits the search by time.",
+					"required":false
+				},
+				{
+					"name":"page",
+					"type":"Number",
+					"info":"The page number of the results, always starting with 1.",
+					"required":false
+				}
+			],
+			"callbacks":[
+				{
+					"name":"error",
+					"info":"Error"
+				},
+				{
+					"name":"success",
+					"info":"Success"
+				}
+			]
+		},
+		{
+			"name":"getCollection",
+			"description":"Get basic information about a collection.",
+			"args":[
+				{
+					"name":"apiKey",
+					"type":"credentials",
+					"info":"API key.",
+					"required":true
+				},
+				{
+					"name":"collectionId",
+					"type":"String",
+					"info":"Collection id on which we will receive data.",
+					"required":true
+				}
+			],
+			"callbacks":[
+				{
+					"name":"error",
+					"info":"Error"
+				},
+				{
+					"name":"success",
+					"info":"Success"
+				}
+			]
+		},
+		{
+			"name":"getProjectFromCollection",
+			"description":"Get projects from a collection.",
+			"args":[
+				{
+					"name":"clientId",
+					"type":"credentials",
+					"info":"API client id.",
+					"required":true
+				},
+				{
+					"name":"collectionId",
+					"type":"String",
+					"info":"Collection id on which we will receive data.",
+					"required":true
+				},
+				{
+					"name":"page",
+					"type":"Number",
+					"info":"The page number of the results, always starting with 1.",
+					"required":false
+				},
+				{
+					"name":"time",
+					"type":"Select",
+					"options":[
+						"all",
+						"today",
+						"week",
+						"month"
+					],
+					"info":"Limits the search by time.",
+					"required":false
+				},
+				{
+					"name":"sort",
+					"type":"Select",
+					"options":[
+						"featuredDate",
+						"appreciations",
+						"views",
+						"comments",
+						"publishedDate"
+					],
+					"info":"The order the results are returned in.",
+					"required":false
+				},
+				{
+					"name":"perPage",
+					"type":"Number",
+					"info":"The number of results per page.(Max:20)",
+					"required":false
+				}
+			],
+			"callbacks":[
+				{
+					"name":"error",
+					"info":"Error"
+				},
+				{
+					"name":"success",
+					"info":"Success"
+				}
+			]
+		}
+	]
+}
