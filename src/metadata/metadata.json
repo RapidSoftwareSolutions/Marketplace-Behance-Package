@@ -3,7 +3,7 @@
 	"tagline":"Behance API",
 	"description":"Behance, part of the Adobe family, is the leading online platform to showcase & discover creative work. The creative world updates their work in one place to broadcast it widely and efficiently. Companies explore the work and access talent on a global scale.",
 	"image":"https://logo.clearbit.com/www.behance.net",
-	"repo":"",
+	"repo":"https://github.com/RapidSoftwareSolutions/Marketplace-Behance-Package",
 	"keywords":[
 		"API",
 		"Creative work",
