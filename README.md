@@ -27,7 +27,7 @@ The getAllProjects endpoints allow you to browse all projects.
 | searchQuery| String     | Free text query string.
 | sort       | Select     | The order the results are returned in.
 | time       | Select     | Limits the search by time.Options - all,today,week,month.
-| field      | String     | Limits the search by creative field.Field name from the list of defined creative fields.
+| field      | Select     | Limits the search by creative field.Field name from the list of defined creative fields.(getAllCreativeFields endpoint).
 | country    | String     | Limits the search by a 2-letter FIPS country code.
 | state      | String     | Limits the search by state or province name.
 | city       | String     | Limits the search by city name.
@@ -60,6 +60,7 @@ Provides a list of creatives you might be interested in following.
 | Field   | Type       | Description
 |---------|------------|----------
 | clientId| credentials| API client id.
+| page     | Number     | The page number of the results, always starting with 1.
 
 ## Behance.getAllCreativeFields
 Retrieves all Creative Fields in two groups, all fields (in 'fields') and popular ones (in 'popular').
@@ -76,7 +77,7 @@ The getAllUsers endpoints allow you to browse all users.
 | clientId   | credentials| API client id.
 | searchQuery| String     | Free text query string.
 | sort       | Select     | The order the results are returned in.
-| field      | String     | Limits the search by creative field.Field name from the list of defined creative fields.
+| field      | Select     | Limits the search by creative field.Field name from the list of defined creative fields (getAllCreativeFields endpoint).
 | country    | String     | Limits the search by a 2-letter FIPS country code.
 | state      | String     | Limits the search by state or province name.
 | city       | String     | Limits the search by city name.
@@ -169,7 +170,7 @@ Get a list of a user's collections by userId.
 | clientId| credentials| API client id.
 | userId  | String     | UserId on which we will receive data.
 | page    | Number     | The page number of the results, always starting with 1.
-| sort    | Select     | The order the results are returned in.Options - featuredDate,appreciations,views,comments,publishedDate.
+| sort    | Select     | The order the results are returned in.Options - comments (default), views, lastItemAddedDate.
 | time    | Select     | Limits the search by time.Options - all,today,week,month.
 
 ## Behance.getUserCollectionsByUsername
@@ -180,7 +181,7 @@ Get a list of a user's collections by username.
 | clientId| credentials| API client id.
 | username| String     | Username on which we will receive data.
 | page    | Number     | The page number of the results, always starting with 1.
-| sort    | Select     | The order the results are returned in.Options - featuredDate,appreciations,views,comments,publishedDate.
+| sort    | Select     | The order the results are returned in.Options - comments (default), views, lastItemAddedDate.
 | time    | Select     | Limits the search by time.Options - all,today,week,month.
 
 ## Behance.getUserStats
@@ -207,7 +208,7 @@ Get a list of creatives who follow the user.
 | clientId | credentials| API client id.
 | userId   | String     | UserId on which we will receive data.
 | page     | Number     | The page number of the results, always starting with 1.
-| sort     | Select     | The order the results are returned in.Options - featuredDate,appreciations,views,comments,publishedDate.
+| sort     | Select     | The order the results are returned in.Options - createdDate (default), appreciations, views, comments, followed, alpha.
 | sortOrder| Select     | The direction in which the results are returned.Options - ascending,descending.
 | perPage  | Number     | The number of results per page.(Max:20)
 
@@ -219,7 +220,7 @@ Get a list of creatives who follow the user by username.
 | clientId | credentials| API client id.
 | username | String     | Username on which we will receive data.
 | page     | Number     | The page number of the results, always starting with 1.
-| sort     | Select     | The order the results are returned in.Options - featuredDate,appreciations,views,comments,publishedDate.
+| sort     | Select     | The order the results are returned in.Options - createdDate (default), appreciations, views, comments, followed, alpha.
 | sortOrder| Select     | The direction in which the results are returned.Options - ascending,descending.
 | perPage  | Number     | The number of results per page.(Max:20).
 
@@ -231,7 +232,7 @@ Get a list of creatives followed by the user by userId.
 | clientId | credentials| API client id.
 | userId   | String     | UserId on which we will receive data.
 | page     | Number     | The page number of the results, always starting with 1.
-| sort     | Select     | The order the results are returned in.Options - featuredDate,appreciations,views,comments,publishedDate.
+| sort     | Select     | The order the results are returned in.Options - createdDate (default), appreciations, views, comments, followed, alpha.
 | sortOrder| Select     | The direction in which the results are returned.Options - ascending,descending.
 | perPage  | Number     | The number of results per page.(Max:20).
 
@@ -243,7 +244,7 @@ Get a list of creatives followed by the user by username.
 | clientId | credentials| API client id.
 | username | String     | Username on which we will receive data.
 | page     | Number     | The page number of the results, always starting with 1.
-| sort     | Select     | The order the results are returned in.Options - featuredDate,appreciations,views,comments,publishedDate.
+| sort     | Select     | The order the results are returned in.Options - createdDate (default), appreciations, views, comments, followed, alpha.
 | sortOrder| Select     | The direction in which the results are returned.Options - ascending,descending.
 | perPage  | Number     | The number of results per page.(Max:20).
 
@@ -270,7 +271,7 @@ The getAllCollections endpoints allow you to browse all collections.
 |------------|------------|----------
 | apiKey     | credentials| API key.
 | searchQuery| String     | Free text query string.
-| sort       | Select     | The order the results are returned in.Options - featuredDate,appreciations,views,comments,publishedDate.
+| sort       | Select     | The order the results are returned in.Options - comments (default), views, lastItemAddedDate.
 | time       | Select     | Limits the search by time.Options - all,today,week,month.
 | page       | Number     | The page number of the results, always starting with 1.
 
@@ -291,6 +292,6 @@ Get projects from a collection.
 | collectionId| String     | Collection id on which we will receive data.
 | page        | Number     | The page number of the results, always starting with 1.
 | time        | Select     | Limits the search by time.Options - all,today,week,month.
-| sort        | Select     | The order the results are returned in.Options - featuredDate,appreciations,views,comments,publishedDate.
+| sort        | Select     | The order the results are returned in.Options - featuredDate (default), appreciations, views, comments, publishedDate, followed.
 | perPage     | Number     | The number of results per page.(Max:20).
 
