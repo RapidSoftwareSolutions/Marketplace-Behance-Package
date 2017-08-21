@@ -5,7 +5,8 @@ $app->post('/api/Behance/getAllCreativesToFollow', function ($request, $response
 
 
     $option = array(
-        "clientId" => "client_id"
+        "clientId" => "client_id",
+        "page" => "page"
     );
     $arrayType = array();
 
