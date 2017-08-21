@@ -889,7 +889,8 @@
 						"appreciations",
 						"views",
 						"alpha",
-						"followed"
+						"followed",
+						"comments"
 					],
 					"info":"The order the results are returned in.",
 					"required":false
@@ -952,7 +953,8 @@
 						"appreciations",
 						"views",
 						"alpha",
-						"followed"
+						"followed",
+						"comments"
 					],
 					"info":"The order the results are returned in.",
 					"required":false
