@@ -52,9 +52,9 @@ $app->post('/api/Behance/getUserFollowing', function ($request, $response) {
 
     if(!empty($queryParam['sort']))
     {
-        if($queryParam['sort'] == 'publishedDate')
+        if($queryParam['sort'] == 'createdDate')
         {
-            $queryParam['sort'] = 'published_date';
+            $queryParam['sort'] = 'created_date';
         }
         if($queryParam['sort'] == 'featuredDate')
         {

@@ -58,6 +58,10 @@ $app->post('/api/Behance/getUserCollectionsByUsername', function ($request, $res
         {
             $queryParam['sort'] = 'featured_date';
         }
+        if($queryParam['sort'] == 'lastItemAddedDate')
+        {
+            $queryParam['sort'] = 'last_item_added_date';
+        }
     }
 
     $client = $this->httpClient;

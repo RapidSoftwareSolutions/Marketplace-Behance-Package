@@ -60,6 +60,10 @@ $app->post('/api/Behance/getUserFollowersByUsername', function ($request, $respo
         {
             $queryParam['sort'] = 'featured_date';
         }
+        if($queryParam['sort'] == 'createdDate')
+        {
+            $queryParam['sort'] = 'created_date';
+        }
     }
 
 

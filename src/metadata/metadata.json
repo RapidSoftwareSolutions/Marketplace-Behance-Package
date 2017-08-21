@@ -269,7 +269,8 @@
 						"appreciations",
 						"views",
 						"comments",
-						"publishedDate"
+						"publishedDate",
+						"followed"
 					],
 					"info":"The order the results are returned in.",
 					"required":false
@@ -714,11 +715,9 @@
 					"name":"sort",
 					"type":"Select",
 					"options":[
-						"featuredDate",
-						"appreciations",
 						"views",
 						"comments",
-						"publishedDate"
+						"lastItemAddedDate"
 					],
 					"info":"The order the results are returned in.",
 					"required":false
@@ -773,11 +772,9 @@
 					"name":"sort",
 					"type":"Select",
 					"options":[
-						"featuredDate",
-						"appreciations",
 						"views",
 						"comments",
-						"publishedDate"
+						"lastItemAddedDate"
 					],
 					"info":"The order the results are returned in.",
 					"required":false
@@ -888,11 +885,11 @@
 					"name":"sort",
 					"type":"Select",
 					"options":[
-						"featuredDate",
+						"createdDate",
 						"appreciations",
 						"views",
-						"comments",
-						"publishedDate"
+						"alpha",
+						"followed"
 					],
 					"info":"The order the results are returned in.",
 					"required":false
@@ -951,11 +948,11 @@
 					"name":"sort",
 					"type":"Select",
 					"options":[
-						"featuredDate",
+						"createdDate",
 						"appreciations",
 						"views",
-						"comments",
-						"publishedDate"
+						"alpha",
+						"followed"
 					],
 					"info":"The order the results are returned in.",
 					"required":false
@@ -1014,11 +1011,12 @@
 					"name":"sort",
 					"type":"Select",
 					"options":[
-						"featuredDate",
+						"createdDate",
 						"appreciations",
 						"views",
 						"comments",
-						"publishedDate"
+						"followed",
+						"alpha"
 					],
 					"info":"The order the results are returned in.",
 					"required":false
@@ -1077,11 +1075,12 @@
 					"name":"sort",
 					"type":"Select",
 					"options":[
-						"featuredDate",
+						"createdDate",
 						"appreciations",
 						"views",
 						"comments",
-						"publishedDate"
+						"followed",
+						"alpha"
 					],
 					"info":"The order the results are returned in.",
 					"required":false
@@ -1190,11 +1189,9 @@
 					"name":"sort",
 					"type":"Select",
 					"options":[
-						"featuredDate",
-						"appreciations",
 						"views",
 						"comments",
-						"publishedDate"
+						"lastItemAddedDate"
 					],
 					"info":"The order the results are returned in.",
 					"required":false
@@ -1299,7 +1296,8 @@
 						"appreciations",
 						"views",
 						"comments",
-						"publishedDate"
+						"publishedDate",
+						"followed"
 					],
 					"info":"The order the results are returned in.",
 					"required":false

@@ -52,9 +52,9 @@ $app->post('/api/Behance/getAllCollections', function ($request, $response) {
 
     if(!empty($queryParam['sort']))
     {
-        if($queryParam['sort'] == 'publishedDate')
+        if($queryParam['sort'] == 'lastItemAddedDate')
         {
-            $queryParam['sort'] = 'published_date';
+            $queryParam['sort'] = 'last_item_added_date';
         }
         if($queryParam['sort'] == 'featuredDate')
         {
